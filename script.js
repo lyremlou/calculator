@@ -37,23 +37,15 @@ const equals = document.querySelector(".equals");
 const display = document.querySelector(".display");
 const operation = document.querySelectorAll(".operator");
 
-//display window
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     display.textContent += button.textContent;
   });
 });
 
-//only buttons that are numbers should be put in the num1 variable
-//needs click event listener for the number class buttons
-//on click of number buttons, store in variable num1
-
 let num1 = "";
 let num2 = "";
-
 let isOperatorClicked = false;
-
-console.log("isOperatorClicked?? : ", isOperatorClicked);
 
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
@@ -82,15 +74,7 @@ operation.forEach((op) => {
 
 equals.addEventListener("click", () => {
   display.textContent = operate(operator, num1, num2);
-  console.log("operator result", operate(operator, num1, num2));
-  console.log(display.textContent);
-  console.log("num1: ", num1, "operator: ", operator, "num2  ", num2);
-  console.log("isOperatorClicked: ", isOperatorClicked);
   num1 = display.textContent;
   num2 = "";
   isOperatorClicked = false;
-  console.log("isOperatorCLicked: ", isOperatorClicked);
 });
-
-//clear variables on equals
-//call the operator function with the first number, operator, and second number as arguments
